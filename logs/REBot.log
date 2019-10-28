@@ -1,0 +1,636 @@
+----------------------------------------
+
+GAME 1
+
+----------------------------------------
+
+LOG: This is the first game!
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am with the RESISTANCE this game
+
+LOG: Added player 1-REBot to evaluation meter
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+----------------------------------------
+
+GAME 2
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am a SPY this game
+
+The spies are: {2-REBot, 1-REBot}
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+----------------------------------------
+
+GAME 3
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am a SPY this game
+
+The spies are: {2-REBot, 1-REBot}
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+----------------------------------------
+
+GAME 4
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am with the RESISTANCE this game
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+----------------------------------------
+
+GAME 5
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am with the RESISTANCE this game
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+---TIME TO SELECT---
+
+
+LOG: I need to select 2 players
+
+TEAM SELECTED
+
+
+LOG: Players selected in team:
+
+[0-REBot, 1-REBot]
+LOG: Current team excluding leader: 
+
+['REBot']
+
+LOG: Number each bot was selected in a team this game: 
+
+{'REBot': 1}
+
+----------------------------------------
+
+GAME 6
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am a SPY this game
+
+The spies are: {3-REBot, 0-REBot}
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+----------------------------------------
+
+GAME 7
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am with the RESISTANCE this game
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+----------------------------------------
+
+GAME 8
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am with the RESISTANCE this game
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+----------------------------------------
+
+GAME 9
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am a SPY this game
+
+The spies are: {3-REBot, 0-REBot}
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+----------------------------------------
+
+GAME 10
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am with the RESISTANCE this game
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+---TIME TO SELECT---
+
+
+LOG: I need to select 2 players
+
+TEAM SELECTED
+
+
+LOG: Players selected in team:
+
+[0-REBot, 2-REBot]
+LOG: Current team excluding leader: 
+
+['REBot']
+
+LOG: Number each bot was selected in a team this game: 
+
+{'REBot': 1}
+
+----------------------------------------
+
+GAME 11
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am a SPY this game
+
+The spies are: {3-REBot, 0-REBot}
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+----------------------------------------
+
+GAME 12
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am with the RESISTANCE this game
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+----------------------------------------
+
+GAME 13
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am with the RESISTANCE this game
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+----------------------------------------
+
+GAME 14
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am a SPY this game
+
+The spies are: {3-REBot, 0-REBot}
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+----------------------------------------
+
+GAME 15
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am with the RESISTANCE this game
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+---TIME TO SELECT---
+
+
+LOG: I need to select 2 players
+
+TEAM SELECTED
+
+
+LOG: Players selected in team:
+
+[0-REBot, 3-REBot]
+LOG: Current team excluding leader: 
+
+['REBot']
+
+LOG: Number each bot was selected in a team this game: 
+
+{'REBot': 1}
+
+----------------------------------------
+
+GAME 16
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am with the RESISTANCE this game
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+----------------------------------------
+
+GAME 17
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am with the RESISTANCE this game
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+----------------------------------------
+
+GAME 18
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am a SPY this game
+
+The spies are: {3-REBot, 2-REBot}
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+----------------------------------------
+
+GAME 19
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am a SPY this game
+
+The spies are: {3-REBot, 2-REBot}
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+----------------------------------------
+
+GAME 20
+
+----------------------------------------
+
+LOG: Players playing this game:
+
+0-REBot
+
+1-REBot
+
+2-REBot
+
+3-REBot
+
+4-REBot
+
+----------------------------------------
+
+LOG: I am with the RESISTANCE this game
+
+
+LOG: Players encountered so far: 1
+
+----------------------------------------
+
+---TIME TO SELECT---
+
+
+LOG: I need to select 2 players
+
+TEAM SELECTED
+
+
+LOG: Players selected in team:
+
+[0-REBot, 1-REBot]
+LOG: Current team excluding leader: 
+
+['REBot']
+
+LOG: Number each bot was selected in a team this game: 
+
+{'REBot': 1}
+
