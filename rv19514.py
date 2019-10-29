@@ -2,6 +2,7 @@ from player import Bot
 from game import State
 import random
 import operator
+import csv
 
 class rv19514(Bot):
     def onGameRevealed(self, players, spies):
@@ -13,6 +14,13 @@ class rv19514(Bot):
 
         global suspected
         global sabotage_count
+
+        global dict_main
+        global vote_res
+
+        vote_res = []
+
+        dict_main = {}
 
         sabotage_count = 0
         suspected = {}
@@ -81,7 +89,8 @@ class rv19514(Bot):
         @param leader   The leader in charge for this mission.
         @param team     The team that was selected by the current leader.
         """
-        self.say("Mission %d team: %s" % (self.game.turn, team))
+        self.say("Mission %d team: %s " % (self.game.turn, team))
+        self.say("Leader: %s " % leader)
         self.leader = leader
         self.team = team
 
@@ -90,6 +99,8 @@ class rv19514(Bot):
         @param team      List of players with index and name.
         @return bool     Answer Yes/No.
         """
+
+        global suspected
         #if last mission, vote constantly
         #if spy then vote false, if resistance vote True
         if self.game.tries == 5:
@@ -108,7 +119,9 @@ class rv19514(Bot):
         """Callback once the whole team has voted.
         @param votes        Boolean votes for each player (ordered).
         """
-        pass
+
+        vote_res = votes
+        self.say("Result of votes: %s " % votes)
 
     def sabotage(self):
         """Decide what to do on the mission once it has been approved.  This
@@ -119,9 +132,11 @@ class rv19514(Bot):
 
     def onMissionComplete(self, sabotaged):
         global sabotage_count
+
         if sabotaged > 0:
             self.say("You're all spies!!")
             sabotage_count = sabotaged
+            self.say("Sabotaged = %d " % sabotaged)
 
     def onMissionFailed(self, leader, team):
         """Callback once a vote did not reach majority, failing the mission.
@@ -147,19 +162,24 @@ class rv19514(Bot):
                     #Ignore self
 
                 #if i was part of team, check team closely and mark spy
-                if self in self.game.team:
+                if self in self.game.team and not self.spy:
                     #if only 1 sabotage and only 2 team members, decalre other spy
                     if(len(self.game.team)==2):
-                        suspected[player] += 20.0
+                        suspected[player] += 50.0
                         self.say(str(suspected[player]) + "is definitely a spy")
 
                     else:
                         #if team size was more
                         if sabotage_count==2:
-                            suspected[player] += 20.0
+                            suspected[player] += 50.0
                             self.say(str(suspected[player]) + "is definitely a spy")
                         else:
                             suspected[player] += 5.0
+
+                elif self in self.game.team and self.spy:
+                    #if only 1 sabotage and only 2 team members, decalre other spy
+                    continue
+
                 else:
                     #i wasn;t part of the team
                     if len(self.game.team)==2:
@@ -181,7 +201,7 @@ class rv19514(Bot):
                             suspected[player] += 2.0
 
             for x, y in suspected.items():
-                self.say(str(x) + "has spy score of" + str(y))
+                self.say(str(x) + " has spy score of " + str(y))
 
         else:
             #no sabotages yay
@@ -193,6 +213,29 @@ class rv19514(Bot):
                 suspected[player] -= 1.0
 
         self.say(suspected)
+
+        with open('train.csv', mode='w') as file:
+            fieldnames = ['prob_of_spy', 'vote', 'leader', 'team', 'spy']
+            writer = csv.DictWriter(file, fieldnames=fieldnames)
+
+            for i in suspected:
+                dict_main['prob_of_spy'] = suspected[i]
+                # dict_main['vote'] = vote_res[list(suspected.keys()).index(i)
+                if i == self.game.leader:
+                    dict_main['leader'] = 1
+                else:
+                    dict_main['leader'] = 0
+                if i in self.game.team:
+                    dict_main['team'] = 1
+                else:
+                    dict_main['team'] = 0
+                if i in self.spies:
+                    dict_main['spy'] = 1
+                else:
+                    dict_main['spy'] = 0
+
+                writer.writerow(dict_main)
+
         return suspected
 
     def onGameComplete(self, win, spies):
@@ -200,4 +243,7 @@ class rv19514(Bot):
         @param win          Boolean true if the Resistance won.
         @param spies        List of only the spies in the game.
         """
-        pass
+        for p in spies:
+            self.say(p.index)
+        self.say("Spies: %s " % spies)
+        self.say("Won = %s " % win)
