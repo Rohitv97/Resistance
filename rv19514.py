@@ -138,6 +138,8 @@ class rv19514(Bot):
             sabotage_count = sabotaged
             self.say("Sabotaged = %d " % sabotaged)
 
+        global suspected
+
     def onMissionFailed(self, leader, team):
         """Callback once a vote did not reach majority, failing the mission.
         @param leader       The player responsible for selection.
@@ -165,13 +167,13 @@ class rv19514(Bot):
                 if self in self.game.team and not self.spy:
                     #if only 1 sabotage and only 2 team members, decalre other spy
                     if(len(self.game.team)==2):
-                        suspected[player] += 50.0
+                        suspected[player] += 30.0
                         self.say(str(suspected[player]) + "is definitely a spy")
 
                     else:
                         #if team size was more
                         if sabotage_count==2:
-                            suspected[player] += 50.0
+                            suspected[player] += 30.0
                             self.say(str(suspected[player]) + "is definitely a spy")
                         else:
                             suspected[player] += 5.0
@@ -220,73 +222,6 @@ class rv19514(Bot):
         @param win          Boolean true if the Resistance won.
         @param spies        List of only the spies in the game.
         """
-        global suspected
-
-        with open('train.csv', mode='a') as file:
-            fieldnames = ['spy_prob','team', 'leader', 'mission_outcome', 'v1', 'v2', 'v3', 'v4', 'v5', 'spy']
-            writer = csv.DictWriter(file, fieldnames=fieldnames)
-
-            start = 0
-
-            for i in suspected:
-
-                dict_main['spy_prob'] = suspected[i]
-
-                if vote_res[0][start]:
-                    dict_main['v1'] = 1
-                else:
-                    dict_main['v1'] = 0
-
-                try:
-                    if vote_res[1][start]:
-                        dict_main['v2'] = 1
-                    else:
-                        dict_main['v2'] = 0
-                except:
-                    dict_main['v2'] = 2
-                try:
-                    if vote_res[2][start]:
-                        dict_main['v3'] = 1
-                    else:
-                        dict_main['v3'] = 0
-                except:
-                    dict_main['v3'] = 2
-                try:
-                    if vote_res[3][start]:
-                        dict_main['v4'] = 1
-                    else:
-                        dict_main['v4'] = 0
-                except:
-                    dict_main['v4'] = 2
-                try:
-                    if vote_res[4][start]:
-                        dict_main['v5'] = 1
-                    else:
-                        dict_main['v5'] = 0
-                except:
-                    dict_main['v5'] = 2
-
-                start += 1
-
-                if i in self.game.team:
-                    dict_main['team'] = 1
-                else:
-                    dict_main['team'] = 0
-                if i == self.game.leader:
-                    dict_main['leader'] = 1
-                else:
-                    dict_main['leader'] = 0
-                if win:
-                    dict_main['mission_outcome'] = 1
-                else:
-                    dict_main['mission_outcome'] = 0
-                if i in self.spies:
-                    dict_main['spy'] = 1
-                else:
-                    dict_main['spy'] = 0
-
-                writer.writerow(dict_main)
-
 
         for p in spies:
             self.say(p.index)
