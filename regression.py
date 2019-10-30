@@ -24,5 +24,5 @@ regressor.fit(X_train, y_train)
 
 y_pred = regressor.predict(X_test)
 
-plt.plot(y_pred, color='red')
-plt.savefig('predicted')
+plt.scatter(X_test[:, 0], y_test, color='green')
+plt.savefig('scatter_actual')
