@@ -141,12 +141,14 @@ class rv19514(Bot):
         global suspected
 
         with open('train.csv', mode='a') as file:
-            fieldnames = ['spy_prob','team', 'leader', 'mission_outcome', 'v1', 'v2', 'v3', 'v4', 'v5', 'spy']
+            fieldnames = ['player_name' ,'spy_prob', 'team', 'leader', 'mission_outcome', 'v1', 'v2', 'v3', 'v4', 'v5', 'spy']
             writer = csv.DictWriter(file, fieldnames=fieldnames)
 
             start = 0
 
             for i in suspected:
+
+                dict_main['player_name'] = i
 
                 new_val = (suspected[i] - 15) / 105
                 #take max value it can have as 120,and min value as 15, and on that assumption normalize it to between 0 and 1
