@@ -76,7 +76,7 @@ class rv19514(Bot):
                 if (suspected[player] <= suspected[second_least] and player is not least) or least == second_least:
                     second_least = player
             team = [least, second_least]
-
+            
             if count==2:
                 return [self] + [team[0]]
             else:

@@ -5,7 +5,7 @@ import operator
 import csv
 from regression import mregression_pred
 
-class rv19514(Bot):
+class rv19514_MR(Bot):
     def onGameRevealed(self, players, spies):
         """This function will be called to list all the players, and if you're
         a spy, the spies too -- including others and yourself.
