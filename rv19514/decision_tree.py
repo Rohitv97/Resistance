@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn import metrics
 import pickle
 
-dataset = pd.read_csv("regression_try/train.csv")
+dataset = pd.read_csv("train.csv")
 X = dataset.iloc[:, 1:-1].values
 y = dataset.iloc[:,10]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state = 1)

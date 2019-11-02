@@ -34,7 +34,7 @@ def mregression_train():
     # plt.savefig('scatter_actual')
 
 def mregression_pred(is_spy):
-    pkl_f = "regression_try/pickle_mr_model.pkl"
+    pkl_f = "rv19514/pickle_mr_model.pkl"
 
     with open(pkl_f, 'rb') as file:
         pickle_model = pickle.load(file)

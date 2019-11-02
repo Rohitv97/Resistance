@@ -104,7 +104,7 @@ class rv19514_DT(Bot):
                         list.append(main_dict_main[i]['v5'])
 
                 # print(list)
-                pkl_f = "pickle_dt_model.pkl"
+                pkl_f = "rv19514/pickle_dt_model.pkl"
                 with open(pkl_f, 'rb') as file:
                     pickle_model = pickle.load(file)
                 temp = pickle_model.predict([list])
