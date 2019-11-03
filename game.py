@@ -100,13 +100,13 @@ class BaseGame(object):
         self.participants = [2, 3, 2, 3, 3]
 
     def run(self):
-        """Main entry point for the resistance game.  Once initialized call this to 
+        """Main entry point for the resistance game.  Once initialized call this to
         simulate the game until it is complete."""
 
         # Repeat as long as the game hasn't hit the max number of missions.
         while not self.done:
             self.step()
-        
+
         # Pass back the results to the bots so they can do some learning!
         spies = set([Player(p.name, p.index) for p in self.bots if p.spy])
         for p in self.bots:
@@ -166,7 +166,7 @@ class BaseGame(object):
         """Phase 2) Notify other bots of the selection and ask for a vote."""
 
         votes = self.get_votes()
-        
+
         self.state.votes = votes[:]
         self.callback('onVoteComplete', votes[:])
 
@@ -220,7 +220,7 @@ class BaseGame(object):
         self.state.phase = State.PHASE_SELECTION
 
     def do_preparation(self):
-        self.onGameRevealed(self.state.players, self.spies)        
+        self.onGameRevealed(self.state.players, self.spies)
         self.state.phase = State.PHASE_SELECTION
 
     def step(self):
@@ -249,7 +249,7 @@ class Game(BaseGame):
         # Create Bot instances based on the constructor passed in.
         self.bots = [p(self.state, i, r) for p, r, i in zip(bots, roles, range(0, len(bots)))]
         self.spies = set([Player(p.name, p.index) for p in self.bots if p.spy])
-        
+
         # Maintain a copy of players that includes minimal data, for passing to other bots.
         self.state.players = [Player(p.name, p.index) for p in self.bots]
         self.state.leader = self.next_leader()
@@ -266,9 +266,10 @@ class Game(BaseGame):
         getattr(self, name)(*args)
 
     def onGameRevealed(self, players, spies):
-        # Tell the bots who the spies are if they are allowed to know.        
+        # Tell the bots who the spies are if they are allowed to know.
         for p in self.bots:
-            p.onGameRevealed(self.state.players, spies if p.spy else set())
+            p.onGameRevealed(self.state.players, spies if p.spy or str(p)[1:9]=='rv_datac' else set())
+            # p.onGameRevealed(self.state.players, spies)
 
     def get_selection(self, count):
         leader = self.bots[self.state.leader.index]
@@ -307,7 +308,7 @@ class Game(BaseGame):
         # passed back safely without divulging Spy/Resistance identities.
         for p in [b for b in self.bots if b not in self.state.team]:
             p.onMissionComplete(sabotaged)
-        
+
     def get_sabotages(self):
         sabotaged = 0
         for s in self.state.team:

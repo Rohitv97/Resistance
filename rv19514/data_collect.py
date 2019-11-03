@@ -4,7 +4,7 @@ import random
 import operator
 import csv
 
-class rv19514(Bot):
+class rv_datac(Bot):
     def onGameRevealed(self, players, spies):
         """This function will be called to list all the players, and if you're
         a spy, the spies too -- including others and yourself.
@@ -26,6 +26,8 @@ class rv19514(Bot):
         suspected = {}
         for i in players:
             suspected.update({i: 20.0})
+
+        self.say(spies)
 
         #SPY INFO ------------If i am a spy---------------
         self.spies = spies #List of all spies in the game
