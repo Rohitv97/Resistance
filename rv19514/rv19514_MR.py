@@ -154,6 +154,59 @@ class rv19514_MR(Bot):
         if self.spy:
             return len([p for p in self.game.team if p in self.spies]) > 0
 
+        # if self.game.turn != 1:
+        #
+        #     if not self.spy:
+        #         main_list = {}
+        #         list = []
+        #
+        #         for i in suspected:
+        #             #take value from dict_main and call mregressiona and see performance
+        #             for j in main_dict_main:
+        #                 if i == j:
+        #                     list.append(main_dict_main[i]['spy_prob'])
+        #                     list.append(main_dict_main[i]['team'])
+        #                     list.append(main_dict_main[i]['leader'])
+        #                     list.append(main_dict_main[i]['mission_outcome'])
+        #                     list.append(main_dict_main[i]['v1'])
+        #                     list.append(main_dict_main[i]['v2'])
+        #                     list.append(main_dict_main[i]['v3'])
+        #                     list.append(main_dict_main[i]['v4'])
+        #                     list.append(main_dict_main[i]['v5'])
+        #
+        #             # print(list)
+        #             temp = mregression_pred([list])
+        #             main_list[i] = temp
+        #             list = []
+        #
+        #         least = self.other_players[0]
+        #         second_least = self.other_players[1]
+        #
+        #         for player in main_list:
+        #             if str(self.name)  in str(player):
+        #                 continue
+        #             if main_list[player] < main_list[least]:
+        #                 least = player
+        #                 continue
+        #             if (main_list[player] <= main_list[second_least] and player is not least) or least == second_least:
+        #                 second_least = player
+        #         go_guys = [least, second_least]
+        #
+        #         if len(self.game.team) == 2 and self in team:
+        #             if least in team or second_least in team:
+        #                 return True
+        #             else:
+        #                 return False
+        #         if len(self.game.team) == 2 and self not in team:
+        #             if least in team and second_least in team:
+        #                 return True
+        #             else:
+        #                 return False
+        #         if len(self.game.team) == 3 and self not in team:
+        #             return False
+        #         else:
+        #             return True
+
         #if i'm not in team and its a team of 3, vote false
         if len(self.game.team)==3 and not self in self.game.team:
             return False
