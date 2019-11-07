@@ -1,0 +1,16 @@
+1.) Trained model files were pickled and stored.
+pickle_dt_model.pkl and pickle_mr_model.pkl are the model files for Decision Tree and Multiple Regression respectively.
+
+2.) rv19514.py contains the code for the simple agent using Rule-Base
+3.) rv19514_MR.py contains the code for the agent using Multiple Regression
+4.) rv19514_DT.py contains the code for the agent using Decision Tree
+
+5.) Report can be found in the folder
+6.) Plots can be found in the folder as well.
+
+7.) data_collect.py is the what was used to collect the data. it is a modification of the simple agent.
+8.) decision_tree.py and regression.py contain the code implementing them using scikit-learn.
+
+9.) The code was tested and ran on my Ubuntu machine and Windows 10 machine. It has also been pushed to my Github.
+
+Enjoy!!
